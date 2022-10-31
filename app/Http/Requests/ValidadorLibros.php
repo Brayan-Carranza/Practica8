@@ -23,7 +23,7 @@ class ValidadorLibros extends FormRequest
     public function rules()
     {
         return [
-        "TxtISBN" => "required|integer|min:13",
+        "TxtISBN" => "required|integer|min_digits:13",
         "TxtTitulo" => "required",
         "TxtAutor" => "required",
         "TxtPaginas" => "required| integer",
@@ -41,7 +41,7 @@ class ValidadorLibros extends FormRequest
             "TxtE-mail.required" => "El E-mail es requerido",
             "TxtE-mail.email" => "Solo se acepta formato e-mail",
             "TxtISBN.integer" => "El ISBN solo acepta numeros",
-            "TxtISBN.min" => "El ISBN acepta minimo 13 caracteres",
+            "TxtISBN.min_digits" => "El ISBN acepta minimo 13 caracteres",
             ];
 
     }

@@ -23,7 +23,7 @@ class ControladorVistas extends Controller
 
     }
     public function ProcesoRegistro(ValidadorLibros $req){
-        $titulo=$req->input('TxtTitulo');
+        $titulo=$req->input('TxtTitulo');   
         return redirect()->route('Reg')->with('confirmacion',$titulo);
     }
 }
