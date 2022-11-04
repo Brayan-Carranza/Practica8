@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::controller(ControladorVistas::class)->group(function () {
     Route::get('welcome', 'vistaWelcome')->name('welcome');
-    Route::get('Principal', 'vistaPrincipal')->name('Pri');
+    Route::get('/', 'vistaPrincipal')->name('Pri');
     Route::get('Registro', 'vistaRegistro')->name('Reg');
 
 

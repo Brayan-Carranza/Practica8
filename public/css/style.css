@@ -1,4 +1,19 @@
 .cardme{
 
-    background-color:rgb(230, 162, 117);
+    background-color:rgb(194, 218, 206);
+}
+.cartas{
+    margin: auto;
+    margin-bottom: 50px;
+}
+.cartas2{
+    vertical-align: top;
+    width: 50%;
+    margin: 5%;
+    height: 70%;
+}
+.cont{
+
+width: 50%;
+margin-bottom: 50px;
 }

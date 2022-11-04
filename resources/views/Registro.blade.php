@@ -2,64 +2,81 @@
 
 @section('contenido')
 
+
     @if (session()->has('confirmacion'))
+        {!! '<script> swal( "Todo correcto", "Libro ' .
+            session()->get('confirmacion') .
+            ' ah sido registrado con éxito",  "success" ) </script> ' !!}
+    @endif
+    <div class="container col-md-6 mt-4 cardme cont">
+        <div class="card text-center font-monospace cardme">
+            <div class="card-header">
+                <h3>Registro</h3>
+            </div>
+            <form method="post" action="guardarRegistro">
+                @csrf
+                <div class="card-body">
 
-{!! '<script> swal( "Todo correcto", "Libro ' . session()->get("confirmacion") . ' ah sido registrado con éxito",  "success" ) </script> '  !!}
+
+                    <div class="form-floating mb-3 m-sm-2">
+                        <input type="text" class="form-control" id="floatingInput" name="TxtISBN" placeholder="text">
+                        <label for="floatingInput">ISBN</label>
+                      </div>
+                    @if ($errors->all())
+                            <p class="text-danger fst-italic">{{ $errors->first('TxtISBN') }}</p>
+                    @endif
 
 
-@endif
-    <div class="container col-md-6 mt-4 cardme">    
-    <div class="card text-center font-monospace cardme" >
-  <div class="card-header">
-    <h3>Registro</h3>
-  </div>
-  <form method="post" action="guardarRegistro">
-                             @csrf 
-  <div class="card-body">
 
-<label class="form-label font-monospace" >ISBN</label>
-<input type="text" class="form-control" name="TxtISBN">
+                    <div class="form-floating mb-3 m-sm-2">
+                        <input type="text" class="form-control" id="floatingInput" name="TxtTitulo" placeholder="text">
+                        <label for="floatingInput">Titulo</label>
+                      </div>
+                    @if ($errors->all())
+                            <p class="text-danger fst-italic">{{ $errors->first('TxtTitulo') }}</p>
+                    @endif
 
-@if($errors->all())
-<div class="alert alert-danger"><p class="text-danger fst-italic">{{ $errors->first('TxtISBN') }}</p> </div>
- @endif
 
- 
-<label class="form-label font-monospace" >Titulo</label>
-<input type="text" class="form-control" name="TxtTitulo">
-@if($errors->all())
-<div class="alert alert-danger"><p class="text-danger fst-italic">{{ $errors->first('TxtTitulo') }}</p> </div>
- @endif
-  
-<label class="form-label font-monospace" >Autor</label>
-<input type="text" class="form-control" name="TxtAutor">
-@if($errors->all())
-<div class="alert alert-danger"><p class="text-danger fst-italic">{{ $errors->first('TxtAutor') }}</p> </div>
- @endif
+                    <div class="form-floating mb-3 m-sm-2">
+                        <input type="text" class="form-control" id="floatingInput" name="TxtAutor" placeholder="text">
+                        <label for="floatingInput">Autor</label>
+                      </div>
+                      @if ($errors->all())
+                          <p class="text-danger fst-italic">{{ $errors->first('TxtAutor') }}</p>
+                  @endif
 
-<label class="form-label font-monospace" >Paginas</label>
-<input type="text" class="form-control" name="TxtPaginas">
-@if($errors->all())
-<div class="alert alert-danger"><p class="text-danger fst-italic">{{ $errors->first('TxtPaginas') }}</p> </div>
- @endif
 
-<label class="form-label font-monospace" >Editorial</label>
-<input type="text" class="form-control" name="TxtEditorial">
-@if($errors->all())
-<div class="alert alert-danger"><p class="text-danger fst-italic">{{ $errors->first('TxtEditorial') }}</p> </div>
- @endif
-  
-<label class="form-label font-monospace" >E-mail Editorial</label>
-<input type="text" class="form-control" name="TxtE-mail">
-@if($errors->all())
-<div class="alert alert-danger"><p class="text-danger fst-italic">{{ $errors->first('TxtE-mail') }}</p> </div>
- @endif
-  <div class="card-footer text-muted">
-    
-  <button type="submit" class="btn btn-danger">Guardar Registro</button>
+                    <div class="form-floating mb-3 m-sm-2">
+                        <input type="text" class="form-control" id="floatingInput" name="TxtPaginas" placeholder="text">
+                        <label for="floatingInput">Paginas</label>
+                      </div>
+                    @if ($errors->all())
+                            <p class="text-danger fst-italic">{{ $errors->first('TxtPaginas') }}</p>
+                    @endif
 
-  </div>
-  </form>
-  </div>
-</div>
-@stop 
+
+                    <div class="form-floating mb-3 m-sm-2">
+                        <input type="text" class="form-control" id="floatingInput" name="TxtEditorial" placeholder="text">
+                        <label for="floatingInput">Editorial</label>
+                      </div>
+                    @if ($errors->all())
+                            <p class="text-danger fst-italic">{{ $errors->first('TxtEditorial') }}</p>
+                    @endif
+
+
+                    <div class="form-floating mb-3 m-sm-2">
+                        <input type="text" class="form-control" id="floatingInput" name="TxtE-mail" placeholder="text">
+                        <label for="floatingInput">E-mail</label>
+                      </div>
+                    @if ($errors->all())
+                            <p class="text-danger fst-italic">{{ $errors->first('TxtE-mail') }}</p>
+                    @endif
+
+                        <button type="submit" class="btn btn-danger">Guardar Registro</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+@stop
