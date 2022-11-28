@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\ControladorBD;
 use App\Http\Controllers\ControladorVistas;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +20,17 @@ Route::get('/', function () {
 });
 
 Route::controller(ControladorVistas::class)->group(function () {
-    Route::get('welcome', 'vistaWelcome')->name('welcome');
-    Route::get('/', 'vistaPrincipal')->name('Pri');
-    Route::get('Registro', 'vistaRegistro')->name('Reg');
+    Route::get('Principal', 'vistaPrincipal')->name('Pri');
 
+
+    Route::get('RegistroClientes','VistaCliente')->name('Cli');
 
 
 });
 
-Route::post('guardarRegistro',[ControladorVistas::class,'ProcesoRegistro'])->name('reg');
+
+Route::post('guardarCliente',[ControladorVistas::class,'AltaCliente'])->name('cli');
+
+Route::get('libro/create',[ControladorBD::class,'create'])->name('libros.create');
+Route::get('libro', [ControladorBD::class,'index'])->name('libros.index');
+Route::post('libro/store',[ControladorBD::class,'store'])->name('libro.store');

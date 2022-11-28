@@ -13,7 +13,7 @@
             <div class="card-header">
                 <h3>Registro</h3>
             </div>
-            <form method="post" action="guardarRegistro">
+            <form method="post" action="{{ route('libro.store') }}">
                 @csrf
                 <div class="card-body">
 
@@ -25,9 +25,6 @@
                     @if ($errors->all())
                             <p class="text-danger fst-italic">{{ $errors->first('TxtISBN') }}</p>
                     @endif
-
-
-
                     <div class="form-floating mb-3 m-sm-2">
                         <input type="text" class="form-control" id="floatingInput" name="TxtTitulo" placeholder="text">
                         <label for="floatingInput">Titulo</label>
