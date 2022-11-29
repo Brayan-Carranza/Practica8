@@ -73,7 +73,8 @@ class ControladorBD extends Controller
      */
     public function edit($id)
     {
-        //
+        $consultaId= DB::table('libros')->where('idLibros',$id)->first();
+        return view('editar',compact('consultaId'));
     }
 
     /**
@@ -85,7 +86,13 @@ class ControladorBD extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('libros')->where('idLibros',$id)->update([
+            "ISBN"=>$request->input('TxtISBN'),
+            "Titulo"=>$request->input('TxtTitulo'),
+            "updated_at"=> Carbon::now(),
+
+        ]);
+        return redirect('libro')->with('Actualizado',"Tu libro ah sido actualizado");
     }
 
     /**

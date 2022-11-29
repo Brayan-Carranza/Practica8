@@ -34,3 +34,5 @@ Route::post('guardarCliente',[ControladorVistas::class,'AltaCliente'])->name('cl
 Route::get('libro/create',[ControladorBD::class,'create'])->name('libros.create');
 Route::get('libro', [ControladorBD::class,'index'])->name('libros.index');
 Route::post('libro/store',[ControladorBD::class,'store'])->name('libro.store');
+Route::get('libro/{id}/edit',  [ControladorBD::class, 'edit'])->name('libros.edit');
+Route::put('libro/{id}', [ControladorBD::class, 'update'])->name('libro.update');

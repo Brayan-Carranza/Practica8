@@ -1,7 +1,10 @@
 @extends('welcome')
 
     @section('contenido')
+    @if (session()->has('Actualizado'))
 
+    {!! "<script> swal( 'Correcto',  'Tu libro ah sido actualizado!' ,  'success' ) </script> "  !!}
+@endif
 @foreach ( $resultRec as $consulta )
 
 
@@ -19,8 +22,8 @@
             </div>
 
         <div class="card-footer">
-         <button type="submit" class="btn btn-primary">A</button>
-         <button type="submit" class="btn btn-primary">E</button>
+            <a href="{{ route('libros.edit',$consulta->idLibros) }}" class="btn btn-success">Actualizar</a>
+         <button type="submit" class="btn btn-danger">Eliminar</button>
 
         </div>
 
