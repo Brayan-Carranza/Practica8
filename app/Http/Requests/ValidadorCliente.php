@@ -25,7 +25,7 @@ class ValidadorCliente extends FormRequest
     {
         return [
         "TxtNombre"=>"required|min:4",
-        "TxtE-mail"=>"required|email",
+        "TxtEmail"=>"required|email",
         "TxtINE"=>"required|numeric|min_digits:10"
         ];
     }
@@ -33,11 +33,11 @@ class ValidadorCliente extends FormRequest
     {
         return[
         "TxtNombre.required"=>"El nombre es requerido",
-        "TxtE-mail.required"=>"El E-mail es requerido",
+        "TxtEmail.required"=>"El E-mail es requerido",
         "TxtINE.required"=>"El No.INE es requerido",
         "TxtINE.min_digits"=>"Solo se aceptan minimo 10 caracteres",
         "TxtNombre.min"=>"Solo se aceptan minimo 4 caracteres",
-        "TxtE-mail.email"=>"Solo se aceptan formatos en E-mail"
+        "TxtEmail.email"=>"Solo se aceptan formatos en E-mail"
         ];
     }
 }

@@ -1,6 +1,63 @@
 .cardme{
 
-    background-color:rgb(66, 173, 120);
+    background-color:rgb(219, 177, 203);
+}
+.cartas{
+    margin: auto;
+    margin-bottom: 50px;
+}
+.cartas2{
+    vertical-align: top;
+    width: 50%;
+    margin: 5%;
+    height: 70%;
+}
+.cont{
+
+width: 50%;
+margin-bottom: 50px;
+}
+.cardme3{
+
+    background-color:rgb(170, 224, 245);
+}
+.cartas{
+    margin: auto;
+    margin-bottom: 50px;
+}
+.cartas2{
+    vertical-align: top;
+    width: 50%;
+    margin: 5%;
+    height: 70%;
+}
+.cont{
+
+width: 50%;
+margin-bottom: 50px;
+}
+.cardme2{
+
+    background-color:rgb(119, 112, 116);
+}
+.cartas{
+    margin: auto;
+    margin-bottom: 50px;
+}
+.cartas2{
+    vertical-align: top;
+    width: 50%;
+    margin: 5%;
+    height: 70%;
+}
+.cont{
+
+width: 50%;
+margin-bottom: 50px;
+}
+.cardme1{
+
+    background-color:rgb(97, 114, 105);
 }
 .cartas{
     margin: auto;

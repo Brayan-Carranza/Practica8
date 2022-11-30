@@ -1,22 +1,15 @@
 @extends('welcome')
 @section('contenido')
 
-@if (session()->has('confirmacion'))
-    {{-- {!! '<div class='alert alert-success fade show' role='alert'>
-    <strong>Felicidades!</strong> Su cliente ah sido registrado correctamente.
-    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-      <span aria-hidden='true'>;</span>
-    </button>
-  </div>'' !!}) --}}
+ @if (session()->has('confirmacion'))
 
-  <div class="alert alert-danger">
-    Porno
-  </div>
+        {!! "<script> swal( 'Correcto',  'Tu recuerdo se guardo!' ,  'success' ) </script> "  !!}
 
-@endif
 
-<div class="container col-md-6 mt-4 cardme cont">
-    <div class="card text-center font-monospace cardme">
+    @endif
+
+<div class="container col-md-6 mt-4 cardme2 cont">
+    <div class="card text-center font-monospace cardme2">
         <div class="card-header">
             <h3>Registro Cliente</h3>
         </div>
@@ -32,11 +25,11 @@
                         <p class="text-danger fst-italic">{{ $errors->first('TxtNombre') }}</p>
                 @endif
                 <div class="form-floating mb-3 m-sm-2">
-                    <input type="text" class="form-control" value="{{old('TxtE-mail')  }}" id="floatingInput" name="TxtE-mail" placeholder="text">
-                    <label for="floatingInput">E-mail</label>
+                    <input type="text" class="form-control" value="{{old('TxtEmail')  }}" id="floatingInput" name="TxtEmail" placeholder="text">
+                    <label for="floatingInput">Email</label>
                 </div>
                 @if ($errors->all())
-                        <p class="text-danger fst-italic">{{ $errors->first('TxtE-mail') }}</p>
+                        <p class="text-danger fst-italic">{{ $errors->first('TxtEmail') }}</p>
                 @endif
                 <div class="form-floating mb-3 m-sm-2">
                     <input type="text" class="form-control" value="{{old('TxtINE')}}" id="floatingInput" name="TxtINE" placeholder="text">

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('Autor');
             $table->string('Paginas');
             $table->string('Editorial');
-            $table->string('E-mail');
+            $table->string('Email');
             $table->date('Fecha');
             $table->timestamps();
         });

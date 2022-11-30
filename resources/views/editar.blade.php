@@ -10,7 +10,7 @@
     @endif
 
 {{-- Tarjeta en Bootstrap --}}
-    <div class="container col-md-6">
+    <div class="container col-md-6 " >
         <h1 class="display-4 text-center mt-5 mb-5 ">Editar Libro</h1>
 
 <!-- interacion con el foreach-->
@@ -23,10 +23,10 @@
 
         @endforeach
         @endif -->
-        <div class="card text-center mb-5 ">
+        <div class="card text-center mb-5 cardme1">
 
             <div class="card-header">
-              fe de erratas!!!
+              <h4> <p class="fw-bold">FE DE ERRATAS!!</p></h4>
             </div>
 
             <div class="card-body">
@@ -49,12 +49,33 @@
                         <input type="text" class="form-control" value="{{ $consultaId->ISBN }}" name="TxtISBN">
                         <p class=" text-danger fst-italic">{{$errors->first('TxtISBN')}}</p>
                     </div>
-
+                    <div class="mb-3">
+                        <label class="form-label">Autor: </label>
+                        <input type="text" class="form-control" value="{{ $consultaId->Autor }}" name="TxtAutor">
+                        <p class=" text-danger fst-italic">{{$errors->first('TxtAutor')}}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Paginas: </label>
+                        <input type="text" class="form-control" value="{{ $consultaId->Paginas }}" name="TxtPaginas">
+                        <p class=" text-danger fst-italic">{{$errors->first('TxtPaginas')}}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Editorial: </label>
+                        <input type="text" class="form-control" value="{{ $consultaId->Editorial }}" name="TxtEditorial">
+                        <p class=" text-danger fst-italic">{{$errors->first('TxtEditorial')}}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">E-mail: </label>
+                        <input type="text" class="form-control" value="{{ $consultaId->Email }}" name="TxtEmail">
+                        <p class=" text-danger fst-italic">{{$errors->first('TxtEmail')}}</p>
+                    </div>
             </div>
 
                  <div class="card-footer">
-                    <button type="submit" class="btn btn-warning">Actualizar Libro</button>
-
+                    <button type="submit" class="btn btn-success">Actualizar Libro <i class="bi bi-check"></i></button>
+                </form>
+                <a href="{{ route('libros.index')}}" class="btn btn-danger">Cancelar <i class="bi bi-x-lg"></i></a>
+            </form >
                 </form >
                 </div>
 

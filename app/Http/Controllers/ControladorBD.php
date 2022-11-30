@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\validadorDiario;
+use App\Http\Requests\ValidadorLibros;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 class ControladorBD extends Controller
@@ -37,7 +38,7 @@ class ControladorBD extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ValidadorLibros $request)
     {
         DB::table('libros')->insert([
             "ISBN"=>$request->input('TxtISBN'),
@@ -45,13 +46,13 @@ class ControladorBD extends Controller
             "Autor"=>$request->input('TxtAutor'),
             "Paginas"=>$request->input('TxtPaginas'),
             "Editorial"=>$request->input('TxtEditorial'),
-            "E-mail"=>$request->input('TxtE-mail'),
+            "Email"=>$request->input('TxtEmail'),
             "Fecha"=> Carbon::now(),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now(),
 
         ]);
-        return redirect('libro/create')->with('confirmacion',"Tu libro ah sido guardado");
+        return redirect('libro')->with('confirmacion',"Tu libro ah sido guardado");
     }
 
     /**
@@ -62,7 +63,8 @@ class ControladorBD extends Controller
      */
     public function show($id)
     {
-        //
+        $consultaId=DB::table('libros')->where('idLibros',$id)->first();
+        return view('M-Eliminar',compact('consultaId'));
     }
 
     /**
@@ -89,6 +91,10 @@ class ControladorBD extends Controller
         DB::table('libros')->where('idLibros',$id)->update([
             "ISBN"=>$request->input('TxtISBN'),
             "Titulo"=>$request->input('TxtTitulo'),
+            "Autor"=>$request->input('TxtAutor'),
+            "Paginas"=>$request->input('TxtPaginas'),
+            "Editorial"=>$request->input('TxtEditorial'),
+            "Email"=>$request->input('TxtEmail'),
             "updated_at"=> Carbon::now(),
 
         ]);
@@ -103,6 +109,7 @@ class ControladorBD extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('libros')->where('idLibros',$id)->delete();
+        return redirect('libro')->with('Eliminacion',"abc");
     }
 }

@@ -28,7 +28,7 @@ class ValidadorLibros extends FormRequest
         "TxtAutor" => "required",
         "TxtPaginas" => "required| integer",
         "TxtEditorial" => "required",
-        "TxtE-mail" => "required|email",
+        "TxtEmail" => "required|email",
         ];
     }
     public function messages(){
@@ -38,8 +38,8 @@ class ValidadorLibros extends FormRequest
             "TxtAutor.required" => "El Autor es requerido",
             "TxtPaginas.required" => "Las Paginas son requeridas",
             "TxtEditorial.required" => "El Editorial es requerido",
-            "TxtE-mail.required" => "El E-mail es requerido",
-            "TxtE-mail.email" => "Solo se acepta formato e-mail",
+            "TxtEmail.required" => "El E-mail es requerido",
+            "TxtEmail.email" => "Solo se acepta formato e-mail",
             "TxtISBN.integer" => "El ISBN solo acepta numeros",
             "TxtISBN.min_digits" => "El ISBN acepta minimo 13 caracteres",
             ];

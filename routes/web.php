@@ -36,3 +36,5 @@ Route::get('libro', [ControladorBD::class,'index'])->name('libros.index');
 Route::post('libro/store',[ControladorBD::class,'store'])->name('libro.store');
 Route::get('libro/{id}/edit',  [ControladorBD::class, 'edit'])->name('libros.edit');
 Route::put('libro/{id}', [ControladorBD::class, 'update'])->name('libro.update');
+Route::get('libro/show/{id}',  [ControladorBD::class, 'show'])->name('libros.show');
+Route::delete('libro/{id}',  [ControladorBD::class, 'destroy'])->name('libros.destroy');
