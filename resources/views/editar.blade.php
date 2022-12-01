@@ -72,7 +72,7 @@
             </div>
 
                  <div class="card-footer">
-                    <button type="submit" class="btn btn-success">Actualizar Libro <i class="bi bi-check"></i></button>
+                    <button type="submit" class="btn btn-success">Actualizar Libro  <i class="bi bi-pencil-square"></i></button>
                 </form>
                 <a href="{{ route('libros.index')}}" class="btn btn-danger">Cancelar <i class="bi bi-x-lg"></i></a>
             </form >

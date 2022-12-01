@@ -13,7 +13,7 @@
         <div class="card-header">
             <h3>Registro Cliente</h3>
         </div>
-        <form method="post" action="guardarCliente">
+        <form method="post" action="{{ route('cliente.store') }}">
             @csrf
             <div class="card-body">
 

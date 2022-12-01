@@ -31,11 +31,14 @@
                         <a class="nav-link" href="{{ route('libros.create') }}">Registro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('Cli') }}">Registro Cliente</a>
+                        <a class="nav-link" href="{{ route('clientes.create') }}">Registro Cliente</a>
                     </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('libros.index') }}">Consulta libros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('clientes.index') }}">Consulta clientes</a>
                 </li>
             </ul>
 
